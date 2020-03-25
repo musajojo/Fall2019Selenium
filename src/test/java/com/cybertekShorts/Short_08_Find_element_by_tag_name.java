@@ -1,10 +1,11 @@
-package com.a1_Practice;
+package com.cybertekShorts;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class A1_Practice {
+public class Short_08_Find_element_by_tag_name {
     public static void main(String[] args) throws InterruptedException {
 
         WebDriver driver = new ChromeDriver();
@@ -14,16 +15,10 @@ public class A1_Practice {
         String amazonURL = "http://amazon.com";
         String cybertekPracticeURL = "http://practice.cybertekschool.com/";
 
-        driver.get("http://google.com");
-        Thread.sleep(2000);
-        System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
-        driver.get("http://msn.com");
-        Thread.sleep(2000);
-        System.out.println(driver.getTitle());
-        System.out.println(driver.getCurrentUrl());
+        driver.get(cybertekPracticeURL);
+        WebElement h1 = driver.findElement(By.tagName("h1"));
+        System.out.println(h1.getText());
+        Thread.sleep(3000);
         driver.quit();
     }
 }
-
-
