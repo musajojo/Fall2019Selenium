@@ -10,9 +10,6 @@ public class Short_08_Find_element_by_tag_name {
 
         WebDriver driver = new ChromeDriver();
 
-        String chromeURL = "http://google.com";
-        String msnURL = "http://msn.com";
-        String amazonURL = "http://amazon.com";
         String cybertekPracticeURL = "http://practice.cybertekschool.com/";
 
         driver.get(cybertekPracticeURL);

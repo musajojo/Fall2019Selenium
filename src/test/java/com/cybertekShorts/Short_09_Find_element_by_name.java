@@ -1,6 +1,8 @@
 package com.cybertekShorts;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Short_09_Find_element_by_name {
@@ -8,10 +10,22 @@ public class Short_09_Find_element_by_name {
 
         WebDriver driver = new ChromeDriver();
 
-        String chromeURL = "http://google.com";
-        String msnURL = "http://msn.com";
-        String amazonURL = "http://amazon.com";
-        String cybertekPracticeURL = "http://practice.cybertekschool.com/";
+        driver.get("http://practice.cybertekschool.com/multiple_buttons");
+        driver.manage().window().maximize();
+
+        WebElement button2 = driver.findElement(By.name("button2"));
+
+        button2.click();
+
+        WebElement result = driver.findElement(By.id("result"));
+        System.out.println(result.getText());
+        Thread.sleep(1000);
+        driver.quit();
+
+
+
+
+
 
     }
 }

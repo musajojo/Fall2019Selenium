@@ -13,9 +13,6 @@ public class Short_07_Intro_to_locators_find_element_by_id {
         WebDriver driver = new ChromeDriver();
 
         String chromeURL = "http://google.com";
-        String msnURL = "http://msn.com";
-        String amazonURL = "http://amazon.com";
-        String cybertekPracticeURL = "http://practice.cybertekschool.com/";
 
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

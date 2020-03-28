@@ -5,21 +5,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class A1_ShortsPractice {
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+public class Short_10_Find_element_by_class_name {
     public static void main(String[] args) throws InterruptedException {
+
         WebDriver driver = new ChromeDriver();
+
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.get("http://practice.cybertekschool.com/");
-        Thread.sleep(2000);
-
-        // Absolute XPath (Full XPath)
-        WebElement dropDownLink = driver.findElement(By.xpath("/html/body/div/div[2]/div/ul/li[11]/a"));
-
-        System.out.println(dropDownLink.getText());
-        dropDownLink.click();
-        Thread.sleep(2000);
-        driver.navigate().back();
-        Thread.sleep(2000);
+        List<WebElement> listOfExamples = driver.findElements(By.className("list-group-item"));
+        System.out.println("Size: " + listOfExamples.size());
+        Thread.sleep(3000);
         driver.quit();
+
+
+
     }
 }
