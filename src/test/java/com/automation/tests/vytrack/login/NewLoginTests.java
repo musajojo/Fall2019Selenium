@@ -2,7 +2,7 @@ package com.automation.tests.vytrack.login;
 
 import com.automation.pages.LoginPage;
 import com.automation.tests.vytrack.AbstractTestBase;
-import com.automation.utilities.BrowserUtils;
+import com.automation.utilities.BrowserUtilities;
 import com.automation.utilities.Driver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -41,7 +41,7 @@ public class NewLoginTests extends AbstractTestBase {
         loginPage.login("wrong", "wrong");
         Assert.assertEquals(loginPage.getWarningMessageText(), "Invalid user name or password.");
         //take a screenshot
-        BrowserUtils.getScreenshot("warning_message");
+        BrowserUtilities.getScreenshot("warning_message");
 
         test.pass("Warning message is displayed");
     }
@@ -52,7 +52,7 @@ public class NewLoginTests extends AbstractTestBase {
         LoginPage loginPage = new LoginPage();
         loginPage.login(userName, password);
         test.info("Login as " + userName);//log some steps
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         Assert.assertEquals(Driver.getDriver().getTitle(), "Dashboard");
         test.pass("Page title Dashboard was verified");
     }

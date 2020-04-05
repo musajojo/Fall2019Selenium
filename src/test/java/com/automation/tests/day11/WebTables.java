@@ -1,7 +1,6 @@
 package com.automation.tests.day11;
 
-import com.automation.utilities.BrowserUtils;
-import com.automation.utilities.DriverFactory;
+import com.automation.utilities.BrowserUtilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -31,12 +30,12 @@ public class WebTables {
 
         driver.get("http://practice.cybertekschool.com/tables");
         driver.manage().window().maximize();
-        BrowserUtils.wait(3);
+        BrowserUtilities.wait(3);
     }
 
     @AfterMethod
     public void teardown() {
-        BrowserUtils.wait(3);
+        BrowserUtilities.wait(3);
         driver.quit();
     }
 
@@ -51,7 +50,7 @@ public class WebTables {
             System.out.println(columnName.getText());
         }
 
-        Assert.assertEquals(BrowserUtils.getTextFromWebElements(columnNames), expected);
+        Assert.assertEquals(BrowserUtilities.getTextFromWebElements(columnNames), expected);
     }
 
     @Test
@@ -70,7 +69,7 @@ public class WebTables {
     public void getSpecificColumn() {
         //td[5] - column with links
         List<WebElement> links = driver.findElements(By.xpath("//table[1]//tbody//tr//td[5]"));
-        System.out.println(BrowserUtils.getTextFromWebElements(links));
+        System.out.println(BrowserUtilities.getTextFromWebElements(links));
     }
 
     /**
@@ -85,7 +84,7 @@ public class WebTables {
         String xpath = "//table[1]//td[text()='jsmith@gmail.com']/..//a[text()='delete']";
         driver.findElement(By.xpath(xpath)).click();
 
-        BrowserUtils.wait(3);
+        BrowserUtilities.wait(3);
 
         //get count of rows
         int rowCount = driver.findElements(By.xpath("//table[1]//tbody//tr")).size();

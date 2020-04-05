@@ -1,6 +1,6 @@
 package com.automation.homework;
 
-import com.automation.utilities.BrowserUtils;
+import com.automation.utilities.BrowserUtilities;
 import com.automation.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,7 +22,7 @@ public class RandomSelection {
     @Test
     public void test() {
         driver.get("http://samples.gwtproject.org/samples/Showcase/Showcase.html#!CwCheckBox");
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
 
         List<WebElement> checkboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
         List<WebElement> labels = driver.findElements(By.xpath("//input[@type='checkbox']/following-sibling::label"));

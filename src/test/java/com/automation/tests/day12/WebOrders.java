@@ -1,6 +1,6 @@
 package com.automation.tests.day12;
 
-import com.automation.utilities.BrowserUtils;
+import com.automation.utilities.BrowserUtilities;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -37,7 +37,7 @@ public class WebOrders {
     @Test
     public void checkBoxTest() {
         driver.findElement(By.id("ctl00_MainContent_btnCheckAll")).click();
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         List<WebElement> checkboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
         for (WebElement checkbox : checkboxes) {
             Assert.assertTrue(checkbox.isSelected());
@@ -74,7 +74,7 @@ public class WebOrders {
 
     @AfterMethod
     public void teardown() {
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         driver.quit();
     }
 }

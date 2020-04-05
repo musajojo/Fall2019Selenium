@@ -1,6 +1,6 @@
 package com.automation.tests.day6;
 
-import com.automation.utilities.BrowserUtils;
+import com.automation.utilities.BrowserUtilities;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,14 +14,14 @@ public class SelectByText {
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
-        BrowserUtils.wait(3);
+        BrowserUtilities.wait(3);
         //create a webelement object for drop-down first
         WebElement simpleDropdown = driver.findElement(By.id("dropdown"));
         //provide weblement object into constructor
         Select selectSimpleDropdown = new Select(simpleDropdown);
         //select by visible text
         selectSimpleDropdown.selectByVisibleText("Option 2");
-        BrowserUtils.wait(3);
+        BrowserUtilities.wait(3);
         //and select option 1
         selectSimpleDropdown.selectByVisibleText("Option 1");
 
@@ -34,7 +34,7 @@ public class SelectByText {
         selectMonth.selectByVisibleText("February");
         selectDay.selectByVisibleText("25");
 
-        BrowserUtils.wait(5);
+        BrowserUtilities.wait(5);
 
         //select all months one by one
         //.getOptions(); - returns all options from dropdown as List<WebElement>
@@ -43,11 +43,11 @@ public class SelectByText {
             //get the month name and select based on that
             String monthName = eachMonth.getText();
             selectMonth.selectByVisibleText(monthName);
-            BrowserUtils.wait(1);
+            BrowserUtilities.wait(1);
 
         }
 
-        BrowserUtils.wait(5);
+        BrowserUtilities.wait(5);
 
         Select stateSelect = new Select(driver.findElement(By.id("state")));
         stateSelect.selectByVisibleText("District Of Columbia");
@@ -69,7 +69,7 @@ public class SelectByText {
         }
 
 
-        BrowserUtils.wait(3);
+        BrowserUtilities.wait(3);
         driver.quit();
     }
 }

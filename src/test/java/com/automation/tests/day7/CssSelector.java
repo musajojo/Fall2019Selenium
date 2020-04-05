@@ -1,6 +1,6 @@
 package com.automation.tests.day7;
 
-import com.automation.utilities.BrowserUtils;
+import com.automation.utilities.BrowserUtilities;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,18 +22,18 @@ public class CssSelector {
         WebElement btn6 = driver.findElement(By.cssSelector("#disappearing_button"));
 
         btn1.click();
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         btn2.click();
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         btn3.click();
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         btn4.click();
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         btn5.click();
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         btn6.click();
 
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         driver.quit();
     }
 }

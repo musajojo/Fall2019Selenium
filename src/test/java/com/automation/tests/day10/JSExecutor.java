@@ -1,11 +1,8 @@
 package com.automation.tests.day10;
 
-import com.automation.utilities.BrowserUtils;
-import com.automation.utilities.DriverFactory;
+import com.automation.utilities.BrowserUtilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -25,7 +22,7 @@ public class JSExecutor {
 
     @AfterMethod
     public void teardown(){
-        BrowserUtils.wait(3);
+        BrowserUtilities.wait(3);
         driver.quit();
     }
 
@@ -39,17 +36,17 @@ public class JSExecutor {
 //        x, y offset
         for (int i=0; i < 10; i++){
             driver.executeScript("window.scrollBy(0, 250)");
-            BrowserUtils.wait(1);
+            BrowserUtilities.wait(1);
         }
 
-        BrowserUtils.wait(3);
+        BrowserUtilities.wait(3);
     }
 
     @Test
     public void scrollToElementTest(){
         driver.get("http://practice.cybertekschool.com/");
         driver.manage().window().maximize();
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         WebElement link = driver.findElement(By.linkText("Cybertek School"));
         //scrollIntoView - javascript method
         //arguments[0] - means 1st webelement after comma

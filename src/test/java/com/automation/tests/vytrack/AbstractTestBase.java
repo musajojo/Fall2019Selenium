@@ -1,6 +1,6 @@
 package com.automation.tests.vytrack;
 
-import com.automation.utilities.BrowserUtils;
+import com.automation.utilities.BrowserUtilities;
 import com.automation.utilities.ConfigurationReader;
 import com.automation.utilities.Driver;
 
@@ -8,7 +8,6 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -71,13 +70,13 @@ public abstract class AbstractTestBase {
         //no failure - no screenshot
         if (iTestResult.getStatus() == ITestResult.FAILURE) {
             //screenshot will have a name of the test
-            String screenshotPath = BrowserUtils.getScreenshot(iTestResult.getName());
+            String screenshotPath = BrowserUtilities.getScreenshot(iTestResult.getName());
             test.fail(iTestResult.getName());//attach test name that failed
-            BrowserUtils.wait(2);
+            BrowserUtilities.wait(2);
             test.addScreenCaptureFromPath(screenshotPath, "Failed");//attach screenshot
             test.fail(iTestResult.getThrowable());//attach console output
         }
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
         Driver.closeDriver();
     }
 }

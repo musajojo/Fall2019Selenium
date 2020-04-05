@@ -1,6 +1,6 @@
 package com.automation.tests.vytrack.activities;
 
-import com.automation.utilities.BrowserUtils;
+import com.automation.utilities.BrowserUtilities;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -52,21 +52,21 @@ public class CalendarEventsPageTests {
 
         actions = new Actions(driver);
 
-        BrowserUtils.wait(3);
+        BrowserUtilities.wait(3);
 
         driver.findElement(usernameBy).sendKeys(storeManagerUserName);
         driver.findElement(passwordBy).sendKeys(storeManagerPassword, Keys.ENTER);
 
-        BrowserUtils.wait(5);
+        BrowserUtilities.wait(5);
 
         //hover over Activities
         actions.moveToElement(driver.findElement(activitiesBy)).perform();
 
-        BrowserUtils.wait(2);
+        BrowserUtilities.wait(2);
 
         driver.findElement(By.linkText("Calendar Events")).click();
 
-        BrowserUtils.wait(5);
+        BrowserUtilities.wait(5);
     }
 
     @Test
@@ -92,7 +92,7 @@ public class CalendarEventsPageTests {
     public void verifyDefaultValues(){
         //Click on Create Calendar Event
         driver.findElement(createCalendarEventBtnBy).click();
-        BrowserUtils.wait(4);
+        BrowserUtilities.wait(4);
 
         //Default owner name should be current user
         String currentUserName = driver.findElement(currentUserBy).getText().trim();
