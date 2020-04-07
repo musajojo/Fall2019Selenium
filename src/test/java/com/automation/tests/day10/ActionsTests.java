@@ -1,6 +1,6 @@
 package com.automation.tests.day10;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -25,7 +25,7 @@ public class ActionsTests {
     public void hoverOnImage() {
         driver.get("http://practice.cybertekschool.com/hovers");
         driver.manage().window().maximize();
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
 
         WebElement img1 = driver.findElement(By.xpath("(//img)[1]"));
         WebElement img2 = driver.findElement(By.xpath("(//img)[2]"));
@@ -41,7 +41,7 @@ public class ActionsTests {
                 pause(1000).
                 moveToElement(img3).
                 build().perform();
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         //hover on the first image
         //verify that "name: user1" is displayed
         //hover over image to make text visible
@@ -51,7 +51,7 @@ public class ActionsTests {
         Assert.assertTrue(imgText1.isDisplayed());
 
         //move to the second image
-        BrowserUtilities.wait(2);
+        BrowserUtils.wait(2);
 
         actions.moveToElement(img2).perform();
         WebElement imgText2 = driver.findElement(By.xpath("//h5[text()='name: user2']"));
@@ -81,11 +81,11 @@ public class ActionsTests {
     public void dragAndDropTest(){
         driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
         driver.manage().window().maximize();
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         //click on accept cookies
         driver.findElement(By.xpath("//button[text()='Accept Cookies']")).click();
 
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         WebElement earth = driver.findElement(By.id("droptarget"));
         WebElement moon = driver.findElement(By.id("draggable"));
 
@@ -100,7 +100,7 @@ public class ActionsTests {
 
     @AfterMethod
     public void teardown() {
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         driver.quit();
     }
 }

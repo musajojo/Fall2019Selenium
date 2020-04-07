@@ -1,6 +1,6 @@
 package com.automation.tests.day5;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,13 +15,13 @@ public class CheckBoxes {
         WebDriver driver = new ChromeDriver();
         driver.get("http://practice.cybertekschool.com/checkboxes");
 
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
         //<input type="checkbox" checked="">
         List<WebElement> checkBoxes = driver.findElements(By.tagName("input"));
 
 //        checkBoxes.get(0).click(); // click on first checkbox
 
-        BrowserUtilities.wait(2);
+        BrowserUtils.wait(2);
 
         //go over collection of checkboxes
         for(int i=0; i<checkBoxes.size(); i++) {
@@ -37,7 +37,7 @@ public class CheckBoxes {
             }
 
         }
-        BrowserUtilities.wait(2);
+        BrowserUtils.wait(2);
         driver.quit();
     }
 }

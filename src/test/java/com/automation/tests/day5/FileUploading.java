@@ -1,6 +1,6 @@
 package com.automation.tests.day5;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ public class FileUploading {
         WebDriver driver = new ChromeDriver();
 
         driver.get("http://practice.cybertekschool.com/upload");
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
 
         WebElement upload = driver.findElement(By.id("file-upload"));
 
@@ -34,7 +34,7 @@ public class FileUploading {
         driver.findElement(By.id("file-submit")).click();//click to upload
 
 
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
         driver.quit();
     }
 }

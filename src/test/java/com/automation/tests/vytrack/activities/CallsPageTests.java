@@ -1,6 +1,6 @@
 package com.automation.tests.vytrack.activities;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -33,21 +33,21 @@ public class CallsPageTests {
 
         actions = new Actions(driver);
 
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
 
         driver.findElement(usernameBy).sendKeys(storeManagerUserName);
         driver.findElement(passwordBy).sendKeys(storeManagerPassword, Keys.ENTER);
 
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
 
         //hover over Activities
         actions.moveToElement(driver.findElement(activitiesBy)).perform();
 
-        BrowserUtilities.wait(2);
+        BrowserUtils.wait(2);
 
         driver.findElement(By.linkText("Calls")).click();
 
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
     }
 
     /**

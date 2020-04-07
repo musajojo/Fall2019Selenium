@@ -1,7 +1,7 @@
 package com.automation.pages.activities;
 
 import com.automation.pages.AbstractPageBase;
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -49,7 +49,7 @@ public class CalendarEventsPage extends AbstractPageBase {
     private WebElement generalInfoDescription;
 
     public void enterCalendarEventTitle(String titleValue) {
-        BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.visibilityOf(title)).sendKeys(titleValue);
     }
 
@@ -65,37 +65,37 @@ public class CalendarEventsPage extends AbstractPageBase {
     }
 
     public String getGeneralInfoTitleText() {
-        BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtils.waitForPageToLoad(20);
         return generalInfoTitle.getText();
     }
 
     public String getGeneralInfoDescriptionText() {
-        BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='Description']/following-sibling::div//div")));
         return generalInfoDescription.getText();
     }
 
     //#############################################################
     public List<String> getColumnNames() {
-        BrowserUtilities.waitForPageToLoad(20);
-        return BrowserUtilities.getTextFromWebElements(columnNames);
+        BrowserUtils.waitForPageToLoad(20);
+        return BrowserUtils.getTextFromWebElements(columnNames);
     }
 
     public String getStartTime() {
-        BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[id^='time_selector_oro_calendar_event_form_start']")));
         wait.until(ExpectedConditions.visibilityOf(startTime));
         return startTime.getAttribute("value");
     }
 
     public String getEndTime() {
-        BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.visibilityOf(endTime));
         return endTime.getAttribute("value");
     }
 
     public String getOwnerName() {
-        BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtils.waitForPageToLoad(20);
         //wait for element to be present in DOM
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("select2-chosen")));
         wait.until(ExpectedConditions.visibilityOf(owner));
@@ -103,16 +103,16 @@ public class CalendarEventsPage extends AbstractPageBase {
     }
 
     public void clickToCreateCalendarEvent() {
-        BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("[title='Create Calendar event']")));
         wait.until(ExpectedConditions.elementToBeClickable(createCalendarEvent)).click();
-        BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtils.waitForPageToLoad(20);
     }
 
     public String getStartDate() {
-        BrowserUtilities.waitForPageToLoad(20);
+        BrowserUtils.waitForPageToLoad(20);
         wait.until(ExpectedConditions.visibilityOf(startDate));
-        BrowserUtilities.scrollTo(startDate);
+        BrowserUtils.scrollTo(startDate);
         return startDate.getAttribute("value");
     }
 }

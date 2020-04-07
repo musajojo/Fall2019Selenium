@@ -1,6 +1,6 @@
 package com.automation.tests.day6;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,11 +14,11 @@ public class NoSelectDropdown {
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
 
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         driver.findElement(By.id("dropdownMenuLink")).click();//to expand dropdown
 
         //<a class="dropdown-item" href="https://www.amazon.com/">Amazon</a>
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
 
         List<WebElement> allLinks = driver.findElements(By.className("dropdown-item"));
         for (WebElement link: allLinks){
@@ -27,7 +27,7 @@ public class NoSelectDropdown {
 
         driver.findElement(By.linkText("Etsy")).click();//click on option
 
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         driver.quit();
     }
 }

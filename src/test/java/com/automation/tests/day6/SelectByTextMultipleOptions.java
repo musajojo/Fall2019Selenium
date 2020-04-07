@@ -1,6 +1,6 @@
 package com.automation.tests.day6;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +14,7 @@ public class SelectByTextMultipleOptions {
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/dropdown");
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         Select languagesSelect = new Select(driver.findElement(By.name("Languages")));
 //        Whether this select element support selecting multiple options at the same time?
 //        This is done by checking the value of the "multiple" attribute.
@@ -31,13 +31,13 @@ public class SelectByTextMultipleOptions {
         for(WebElement selectedLanguage: selectedLanguages){
             System.out.println(selectedLanguage.getText());
         }
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
 
         languagesSelect.deselectByVisibleText("Java");//to unselect something
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         languagesSelect.deselectAll();
 
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         driver.quit();
     }
 }

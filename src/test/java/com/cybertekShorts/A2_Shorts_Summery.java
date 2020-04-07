@@ -8,7 +8,7 @@ public class A2_Shorts_Summery {
 
         WebDriver driver = new ChromeDriver();
 
-        String chromeURL = "http://google.com";
+        String googleURL = "http://google.com";
         String msnURL = "http://msn.com";
         String amazonURL = "http://amazon.com";
         String cybertekPracticeURL = "http://practice.cybertekschool.com/";
@@ -16,7 +16,7 @@ public class A2_Shorts_Summery {
         // vTrekQA1URL_userName = storemanager85
         // vTrekQA1URL_password = UserUser123
 
-        driver.get(chromeURL);
+        driver.get(googleURL);
         driver.manage().window().maximize();
         Thread.sleep(3000);
         driver.get(msnURL);

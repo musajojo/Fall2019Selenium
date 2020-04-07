@@ -1,6 +1,6 @@
 package com.automation.tests.vytrack.fleet;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -80,7 +80,7 @@ public class VehiclesTests {
         driver.findElement(passwordBy).sendKeys(password, Keys.ENTER);
 
         //put more wait here as well, if didn't click
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
 
         //click on fleet
 //        driver.findElement(fleetBy).click();
@@ -91,13 +91,13 @@ public class VehiclesTests {
         //perform - to execute command
         //every action should end with perform()
 
-        BrowserUtilities.wait(2);
+        BrowserUtils.wait(2);
 
         //click on Vehicles
         driver.findElement(By.linkText("Vehicles")).click();
         //put more wait time if you are getting Cars, Dashboard...
         //this application is slooooow...
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
     }
 
     @AfterMethod

@@ -2,7 +2,7 @@ package com.automation.tests.vytrack.login;
 
 import com.automation.pages.LoginPage;
 import com.automation.tests.vytrack.AbstractTestBase;
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.Driver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -22,6 +22,7 @@ public class NewLoginTests extends AbstractTestBase {
         loginPage.login();
         //like system.out, but it goes to report as well
         test.info("Login as store manager");//log some steps
+        BrowserUtils.wait(2);
         Assert.assertEquals(Driver.getDriver().getTitle(), "Dashboard");
         //if assertion passed, it will set test status in report to passed
 
@@ -41,7 +42,7 @@ public class NewLoginTests extends AbstractTestBase {
         loginPage.login("wrong", "wrong");
         Assert.assertEquals(loginPage.getWarningMessageText(), "Invalid user name or password.");
         //take a screenshot
-        BrowserUtilities.getScreenshot("warning_message");
+        BrowserUtils.getScreenshot("warning_message");
 
         test.pass("Warning message is displayed");
     }
@@ -52,7 +53,7 @@ public class NewLoginTests extends AbstractTestBase {
         LoginPage loginPage = new LoginPage();
         loginPage.login(userName, password);
         test.info("Login as " + userName);//log some steps
-        BrowserUtilities.wait(2);
+        BrowserUtils.wait(2);
         Assert.assertEquals(Driver.getDriver().getTitle(), "Dashboard");
         test.pass("Page title Dashboard was verified");
     }

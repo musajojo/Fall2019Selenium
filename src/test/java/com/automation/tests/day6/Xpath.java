@@ -1,6 +1,6 @@
 package com.automation.tests.day6;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +11,7 @@ public class Xpath {
     public static void main(String[] args) {
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/multiple_buttons");
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         //value can be inside '' or ""
         //if you don't know the tag name, or want to skip tag name, use *
         //for example //*[@onclick='button1()']  | * means any tag name
@@ -39,7 +39,7 @@ public class Xpath {
         btn5.click();
         System.out.println(result.getText());
 
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         driver.quit();
     }
 }

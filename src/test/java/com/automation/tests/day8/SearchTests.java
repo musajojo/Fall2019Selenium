@@ -1,6 +1,6 @@
 package com.automation.tests.day8;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -20,9 +20,9 @@ public class SearchTests {
     @Test
     public void googleSearchTest(){
         driver.get("http://google.com");
-        BrowserUtilities.wait(3);
+        BrowserUtils.wait(3);
         driver.findElement(By.name("q")).sendKeys("java", Keys.ENTER);
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
         //since every search item has a tag name <h3>
         //it's the easiest way to collect all of them
         List<WebElement> searchItems = driver.findElements(By.tagName("h3"));
@@ -55,10 +55,10 @@ public class SearchTests {
         //so we need to maximize window before clicking on it
         driver.manage().window().maximize();
 
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
 
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Java", Keys.ENTER);
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
         //find all links inside h2 elements, because h2 element is no clickable itself
         //hyperlinks must be clickable
         List<WebElement> searchItems = driver.findElements(By.xpath("//h2//a"));
@@ -68,7 +68,7 @@ public class SearchTests {
             System.out.println("Title: "+searchItem.getText());
         }
         searchItems.get(0).click();
-        BrowserUtilities.wait(5);
+        BrowserUtils.wait(5);
 
         WebElement productTitle = driver.findElement(By.id("title"));
         String productTitleString = productTitle.getText();

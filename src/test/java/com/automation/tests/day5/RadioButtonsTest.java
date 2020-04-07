@@ -1,6 +1,6 @@
 package com.automation.tests.day5;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.DriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -15,7 +15,7 @@ public class RadioButtonsTest {
 
         WebDriver driver = DriverFactory.createDriver("chrome");
         driver.get("http://practice.cybertekschool.com/radio_buttons");
-        BrowserUtilities.wait(4);
+        BrowserUtils.wait(4);
         //<input type="radio" id="black" name="color">
         WebElement blackButton = driver.findElement(By.id("black"));
 
@@ -27,7 +27,7 @@ public class RadioButtonsTest {
             System.out.println("FAILED TO CLICK ON BLACK BUTTON");
         }
 
-        BrowserUtilities.wait(2);
+        BrowserUtils.wait(2);
 
         //how do we verify that button clicked
         //returns true, if button clicked

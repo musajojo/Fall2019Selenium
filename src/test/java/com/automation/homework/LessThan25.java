@@ -1,6 +1,6 @@
 package com.automation.homework;
 
-import com.automation.utilities.BrowserUtilities;
+import com.automation.utilities.BrowserUtils;
 import com.automation.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -32,7 +32,7 @@ public class LessThan25 {
         //we collect only dollar values from the price of every item
         List<WebElement> prices = driver.findElements(By.className("a-price-whole"));
         //we convert collection of web elements into collection of strings
-        List<String> pricesText = BrowserUtilities.getTextFromWebElements(prices);
+        List<String> pricesText = BrowserUtils.getTextFromWebElements(prices);
         System.out.println(pricesText);
         for (String price : pricesText) {
 
